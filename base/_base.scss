@@ -1,29 +1,33 @@
-.u-center-text {text-align: center !important;}
-
-.u-margin-bottom-small {
-    margin-bottom: 1.5rem !important;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
-.u-margin-bottom-medium {
-    margin-bottom: 4rem !important;
+html {
+    // this defines what 1rem is:
+    font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5%
 
-    @include respond(tab-port) {
-        margin-bottom: 3rem !important;
+    @include respond(tab-land) {  // width < 1200
+        font-size: 56.25%;  //1 rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) { // width < 900
+        font-size: 50%;     //1 rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;      //1 rem = 12, 12/16 = 75%
     }
 }
 
-.u-margin-bottom-big {
-    margin-bottom: 8rem !important;
+body {
+    box-sizing: border-box;
+    padding: 3rem;
 
     @include respond(tab-port) {
-        margin-bottom: 5rem !important;
+        padding: 0;
     }
-}
-
-.u-margin-top-big {
-    margin-top: 8rem !important;
-}
-
-.u-margin-top-huge {
-    margin-top: 10rem !important;
 }
